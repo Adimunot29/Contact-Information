@@ -1,0 +1,43 @@
+﻿@model phonebook_mvc.Models.PhoneDetails
+@{
+    ViewBag.Title = "AddorEdit";
+}
+
+<div class="form-body">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ContactID)
+                
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName)
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName)
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber)
+            @Html.EditorFor(model => model.PhoneNumber)
+            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status)
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+        
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn button-danger" />
+        </div>
+    }
+</div>
