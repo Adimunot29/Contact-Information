@@ -32,12 +32,19 @@
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Status)
-            @Html.EditorFor(model => model.Status)
+            <br />
+            <label>@Html.RadioButtonFor(x => x.Status, "Active", new { id = "Status-evet", @class = "md-radiobtn" })Active</label>
+            <label>@Html.RadioButtonFor(x => x.Status, "Inactive", new { id = "Status-hayir", @class = "md-radiobtn" })Inactive</label>
             @Html.ValidationMessageFor(model => model.Status)
         </div>
-        
+
         <div class="form-group">
             <input type="submit" value="Submit" class="btn button-danger" />
         </div>
     }
 </div>
+<style>
+    .chkStatus {
+        height:auto;
+    }
+</style>
